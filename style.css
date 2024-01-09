@@ -3,49 +3,78 @@
    background: pink;
 }*/
 
-html {
-    background: linear-gradient(90deg, #FF4E50 10%, #F9D423 90%);
-    overflow: hidden;
-    height: 100%;
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+div {
+  width: 100px;
+  height: 100px;
+  background: #666;
+  position: absolute;
+  top: 50px;
+  left: 0; right: 0;
+  margin: auto;
+  animation: rotateIt1 4s infinite;
+}
+div:before, div:after  {
+  content: "";
+  display: block;
+  position: absolute;
+  top:0; left:0; right: 0; bottom: 0;
+  margin: auto;
+}
+div:before {
+  width: 80px;
+  height: 80px;
+  background: #777;
+  animation: rotateIt2 4s infinite;
+}
+div:after {
+  width: 60px;
+  height: 60px;
+  background: #888;
+  animation: rotateIt3 4s infinite;
+}
+span {
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 200px;
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+  text-align: center;
+  top: 190px; left: 0; right: 0;
+  margin: auto;
+  z-index: -1;
+}
+span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 110%;
+  height: 150%;
+  background: #fff;
+  border-radius: 50%;
+  top: -5px;
+  animation: textShow 4s infinite;
+}
+@keyframes rotateIt1 {
+  50% {
+    transform: rotate(360deg);
   }
-  
-  .loader {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    left: 50%;
-    margin-left: -20px;
-    top: 50%;
-    margin-top: -20px;
-    
-    &:before,
-    &:after {
-      content: "";
-      height: 40px;
-      width: 40px;
-      border: 8px solid rgba(255,255,255,.5);
-      border-radius: 10px;
-      position: absolute;
-      top: 0;
+}
+@keyframes rotateIt2 {
+    50% {
+      transform: rotate(450deg);
+      border-radius: 50%;
     }
-    
-    &:before {
-      animation: animate 2s infinite linear;
+}
+@keyframes rotateIt3 {
+    50% {
+      transform: rotate(540deg);
     }
-    
-    &:after {
-      animation: animate2 2s infinite linear;
+}
+@keyframes textShow {
+    50% {
+      top: -60px;
     }
-  }
-  
-  @keyframes animate {
-    100% {
-      transform: rotate(180deg) skew(360deg);
-    }
-  }
-  
-  @keyframes animate2 {
-    100% {
-      transform: rotate(-180deg) skew(-360deg);
-    }
-  }
+}
