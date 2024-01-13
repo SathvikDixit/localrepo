@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
     int c,x;
-    cout << "Enter any code:";
+    cout << "Enter your age:";
     cin >> c;
     if(c>=18)
     {
