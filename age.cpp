@@ -1,16 +1,14 @@
 #include<iostream>
 using namespace std;
+double power(double baseNum , double powNum ){  //  Function for Squaring or Cubing numbers
+    double result = 1;
+
+    for (int i=0;i<powNum;i++){
+        result=result*baseNum;
+    }
+    return result;
+}
 int main()
 {
-    int c,x;
-    cout << "Enter your age:";
-    cin >> c;
-    if(c>=18)
-    {
-        cout <<" YOu are eligable";
-    }
-    else{
-        cout << "you are  not eligable";
-    }
-    return 0;
+   cout << power (2,9);
 }
